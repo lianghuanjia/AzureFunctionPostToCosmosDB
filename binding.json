@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "name": "doc",
+      "databaseName": "warehouse inventory",
+      "collectionName": "WarehouseInventory1",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "cosmosdbConnectionString",
+      "direction": "out",
+      "type": "cosmosDB"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
