@@ -1,1 +1,29 @@
-
+{
+  "bindings": [
+    {
+      "name": "req",
+      "authLevel": "function",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "direction": "in",
+      "type": "httpTrigger"
+    },
+    {
+      "name": "doc",
+      "databaseName": "warehouse inventory",
+      "collectionName": "WarehouseInventory1",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "cosmosdbConnectionString",
+      "direction": "in",
+      "type": "cosmosDB",
+      "sqlQuery": "SELECT * from c WHERE c.shipperId = {shipperId}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
